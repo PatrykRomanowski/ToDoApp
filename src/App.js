@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+import ToDoList from "./components/ToDoList";
+
+import "./App.css";
+import FormComponent from "./components/Form";
+
+const TO_DO_INITIAL = [
+  {
+    id: 1,
+    to_do: "zrobić zakupy",
+    date: new Date(2022, 8, 15),
+  },
+  {
+    id: 2,
+    to_do: "kupić buty",
+    date: new Date(2022, 9, 15),
+  },
+  {
+    id: 3,
+    to_do: "pójść do fryzjera",
+    date: new Date(2022, 9, 14),
+  },
+];
 
 function App() {
+  const [toDo, setToDo] = useState(TO_DO_INITIAL);
+
+  const newThingToDo = (thing) => {
+    setToDo((prevToDo) => {
+      return [...prevToDo, thing];
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FormComponent onAddThingToDo={newThingToDo} />
+      <ToDoList items={toDo} />
     </div>
   );
 }
