@@ -2,22 +2,26 @@ import { useState } from "react";
 
 import ToDoList from "./components/ToDoList";
 
+import DateFnsUtils from "@date-io/date-fns"; // choose your lib
+
 import "./App.css";
+import "./components/fonts.css";
+
 import FormComponent from "./components/Form";
 
 const TO_DO_INITIAL = [
   {
-    id: 1,
+    key: 1,
     to_do: "zrobić zakupy",
     date: new Date(2022, 8, 15),
   },
   {
-    id: 2,
+    key: 2,
     to_do: "kupić buty",
     date: new Date(2022, 9, 15),
   },
   {
-    id: 3,
+    key: 3,
     to_do: "pójść do fryzjera",
     date: new Date(2022, 9, 14),
   },
@@ -27,8 +31,7 @@ function App() {
   const [toDo, setToDo] = useState(TO_DO_INITIAL);
 
   const deleteItemHandler = (item_id) => {
-    console.log(item_id + "XD");
-    const newArray = toDo.filter((el) => el.id !== item_id);
+    const newArray = toDo.filter((el) => el.key !== item_id);
     setToDo(newArray);
   };
 

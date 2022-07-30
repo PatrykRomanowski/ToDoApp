@@ -10,6 +10,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 10px;
+  font-family: "Anton", sans-serif;
 }
 
 .new-to-do button {
@@ -26,4 +27,9 @@
 .new-to-do button:active {
   background-color: #510674;
   border-color: #510674;
+}
+
+label {
+  text-transform: uppercase;
+  margin: 10px;
 }
