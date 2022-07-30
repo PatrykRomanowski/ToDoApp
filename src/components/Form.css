@@ -33,3 +33,13 @@ label {
   text-transform: uppercase;
   margin: 10px;
 }
+
+@media (max-width: 1000px) {
+  .new-to-do-wrapper {
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 30px;
+  }
+}
