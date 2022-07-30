@@ -1,11 +1,23 @@
-.containet_to_do {
+.container_to_do {
   display: flex;
   width: 80%;
   text-transform: uppercase;
   justify-content: space-between;
   align-items: center;
-
   margin: 5px auto;
   background-color: rgb(168, 146, 238);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+.container_date {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  background-color: #40005d;
+  min-width: 8%;
+  margin: 0.5rem;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
 }

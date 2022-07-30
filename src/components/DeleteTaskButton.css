@@ -1,0 +1,16 @@
+.delete-class-button {
+  align-self: end;
+  margin: 10px;
+  border: 1px solid white;
+  background-color: #40005d;
+  color: white;
+  text-transform: uppercase;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-class-button:hover {
+  background-color: #510674;
+  border-color: #510674;
+}

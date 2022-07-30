@@ -26,6 +26,12 @@ const TO_DO_INITIAL = [
 function App() {
   const [toDo, setToDo] = useState(TO_DO_INITIAL);
 
+  const deleteItemHandler = (item_id) => {
+    console.log(item_id + "XD");
+    const newArray = toDo.filter((el) => el.id !== item_id);
+    setToDo(newArray);
+  };
+
   const newThingToDo = (thing) => {
     setToDo((prevToDo) => {
       return [...prevToDo, thing];
@@ -35,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <FormComponent onAddThingToDo={newThingToDo} />
-      <ToDoList items={toDo} />
+      <ToDoList onSaveId={deleteItemHandler} items={toDo} />
     </div>
   );
 }
