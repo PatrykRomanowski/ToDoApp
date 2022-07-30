@@ -1,0 +1,29 @@
+.new-to-do {
+  background-color: rgb(168, 146, 238);
+  padding: 20px;
+  margin: 10px auto;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.new-to-do-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.new-to-do button {
+  font: inherit;
+  cursor: pointer;
+  padding: 10px 10px;
+  background-color: #40005d;
+  color: white;
+  border: 1px solid #40005d;
+  border-radius: 10px;
+}
+
+.new-to-do button:hover,
+.new-to-do button:active {
+  background-color: #510674;
+  border-color: #510674;
+}

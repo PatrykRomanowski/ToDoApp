@@ -12,6 +12,7 @@ const FormComponent = (props) => {
     const ToDoData = {
       to_do: ThinkToDo,
       date: new Date(DateTaken),
+      id: Math.random().toString(),
     };
     props.onAddThingToDo(ToDoData);
     setThinkToDo("");
@@ -27,25 +28,27 @@ const FormComponent = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div>
-        <div>
-          <label>Wpisz co masz do zrobienia:</label>
-          <input
-            type="text"
-            value={ThinkToDo}
-            onChange={ToDoChangeHandler}
-          ></input>
+    <div className="new-to-do">
+      <form onSubmit={submitHandler}>
+        <div className="new-to-do-wrapper">
+          <div>
+            <label>Wpisz co masz do zrobienia:</label>
+            <input
+              type="text"
+              value={ThinkToDo}
+              onChange={ToDoChangeHandler}
+            ></input>
+          </div>
+          <div>
+            <label>Ustaw date</label>
+            <input type="date" value={DateTaken} onChange={DataHandler}></input>
+          </div>
+          <div>
+            <button type="submit">Dodaj rzecz do zrobienia</button>
+          </div>
         </div>
-        <div>
-          <label>Ustaw date</label>
-          <input type="date" value={DateTaken} onChange={DataHandler}></input>
-        </div>
-        <div>
-          <button type="submit">Dodaj rzecz do zrobienia</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
